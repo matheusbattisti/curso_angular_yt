@@ -11,4 +11,8 @@ export class TwoWayBindingComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  removeAnimal() {
+    this;
+  }
 }
