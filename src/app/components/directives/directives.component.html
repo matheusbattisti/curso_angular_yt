@@ -1,6 +1,10 @@
-<h2 [ngStyle]="{ 'font-size': size + 'px', 'font-family': font, color: color }">
-  Testando diretiva de Style
-</h2>
-<h2 [ngClass]="classes">Testando diretiva de Classe 1</h2>
-<h2 [ngClass]="classes">Testando diretiva de Classe 2</h2>
-<h2 [ngClass]="underline">Testando diretiva de classe 3</h2>
+<div class="class">
+  <h2
+    [ngStyle]="{ 'font-size': size + 'px', 'font-family': font, color: color }"
+  >
+    Testando diretiva de Style
+  </h2>
+  <h2 [ngClass]="classes">Testando diretiva de Classe 1</h2>
+  <h2 [ngClass]="classes">Testando diretiva de Classe 2</h2>
+  <h2 [ngClass]="underline">Testando diretiva de classe 3</h2>
+</div>
