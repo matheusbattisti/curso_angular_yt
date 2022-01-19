@@ -1,0 +1,43 @@
+.home-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.home-container h1 {
+  margin-bottom: 1em;
+}
+
+.moments-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 80%;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.moment {
+  width: 32%;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.moment img {
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+.moment h3,
+.moment p {
+  margin-bottom: 1em;
+}
+
+a {
+  color: #dec129;
+  padding: 0.3em 0.6em;
+}
+
+a:hover {
+  background-color: #efefef;
+}

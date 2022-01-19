@@ -1,11 +1,19 @@
-<h1>Moments</h1>
-<div *ngIf="moments.length > 0; else noMoments">
-  <ul>
-    <li *ngFor="let moment of moments">
-      {{ moment.title }}
-    </li>
-  </ul>
+<div class="home-container">
+  <h1>Veja o que estão compartilhando:</h1>
+  <div *ngIf="moments.length > 0; else noMoments">
+    <div class="moments-container">
+      <div class="moment" *ngFor="let moment of moments">
+        <img
+          src="{{ baseApiUrl }}uploads/{{ moment.image }}"
+          alt="{{ moment.title }}"
+        />
+        <h3>{{ moment.title }}</h3>
+        <p>Comentários: {{ moment.comments.length }}</p>
+        <p><a routerLink="moments/{{ moment.id }}">Detalhes</a></p>
+      </div>
+    </div>
+  </div>
+  <ng-template #noMoments>
+    <h1>Não há Momentos!</h1>
+  </ng-template>
 </div>
-<ng-template #noMoments>
-  <h1>Não há Momentos!</h1>
-</ng-template>

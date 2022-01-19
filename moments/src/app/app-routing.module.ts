@@ -6,7 +6,7 @@ import { MomentComponent } from './components/pages/moment/moment.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'moment/:id', component: MomentComponent },
+  { path: 'moments/:id', component: MomentComponent },
   { path: 'about', component: AboutComponent },
 ];
 
