@@ -1,0 +1,11 @@
+<h1>Moments</h1>
+<div *ngIf="moments.length > 0; else noMoments">
+  <ul>
+    <li *ngFor="let moment of moments">
+      {{ moment.title }}
+    </li>
+  </ul>
+</div>
+<ng-template #noMoments>
+  <h1>Não há Momentos!</h1>
+</ng-template>
