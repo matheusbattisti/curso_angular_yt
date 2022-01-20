@@ -1,0 +1,20 @@
+<h2>Compartilhe o seu <span>momento</span>!</h2>
+<form (ngSubmit)="createHandler(title.value, description.value)">
+  <div class="form-group">
+    <label for="title">Título:</label>
+    <input type="text" name="title" #title placeholder="Coloque um título" />
+  </div>
+  <div class="form-group">
+    <label for="description">Descrição:</label>
+    <textarea
+      name="description"
+      #description
+      placeholder="O que aconteceu lá?"
+    ></textarea>
+  </div>
+  <div class="form-group">
+    <label for="image">Coloque a foto que mais marcou:</label>
+    <input type="file" name="image" #image (change)="onFileSelected($event)" />
+  </div>
+  <input type="submit" value="Compartilhar!" />
+</form>

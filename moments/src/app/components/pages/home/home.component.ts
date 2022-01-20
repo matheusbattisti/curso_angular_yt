@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { MomentService } from 'src/app/services/moment.service';
+import { MomentService } from 'src/app/services/moment/moment.service';
 
 import { Moment } from 'src/app/Moment';
 

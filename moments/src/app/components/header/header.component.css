@@ -17,7 +17,27 @@ nav {
   margin-right: 0.6em;
 }
 
+.brand h2 {
+  transition: 0.4s;
+}
+
+.brand:hover > h2 {
+  color: #dec129;
+}
+
 .links li {
   margin-right: 1em;
   list-style: none;
+}
+
+.links a {
+  padding: 0.1em 0.3em;
+}
+
+#add a {
+  color: #dec129;
+}
+
+#add a:hover {
+  background-color: #efefef;
 }
