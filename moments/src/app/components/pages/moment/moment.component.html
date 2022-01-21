@@ -13,13 +13,13 @@
     <a routerLink="/moments/edit/{{ moment.id }}" class="edit-btn"
       ><fa-icon [icon]="faEdit"></fa-icon> Editar</a
     >
-    <button class="remove-btn" (click)="removeHandler(moment.id)">
+    <button class="remove-btn" (click)="removeHandler(moment.id!)">
       <fa-icon [icon]="faTimes"></fa-icon> Excluir
     </button>
   </div>
   <div class="comments">
     <h3>Comentários:</h3>
-    <div *ngIf="moment.comments.length > 0; else noComments">
+    <div *ngIf="moment.comments!.length > 0; else noComments">
       <div>
         <p *ngFor="let comment of moment.comments">
           {{ comment.text }} - por {{ comment.username }}

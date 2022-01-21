@@ -1,0 +1,48 @@
+/* FORM STYLES */
+form {
+  width: 450px;
+  margin: 0 auto;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+}
+
+.form-group label {
+  font-weight: bold;
+  font-size: 0.9em;
+  margin-bottom: 0.4em;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 0.3em;
+  color: #777;
+  font-size: 0.8em;
+}
+
+input[type="submit"] {
+  background-color: #efefef;
+  border: none;
+  padding: 0.6em 1em;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1.1em;
+  border: 2px solid transparent;
+  transition: 0.4s;
+}
+
+input[type="submit"]:hover {
+  color: #dec129;
+  border-color: #dec129;
+  background-color: transparent;
+}
+
+.validation-error p {
+  color: #dc3545;
+  margin-top: 0.4em;
+  border-left: 3px solid #dc3545;
+  padding-left: 0.2em;
+}
