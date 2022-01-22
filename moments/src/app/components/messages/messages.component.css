@@ -1,5 +1,5 @@
 .message {
-  position: absolute;
+  position: fixed;
   top: 3em;
   width: 50%;
   margin-left: 50%;

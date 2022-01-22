@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { MomentService } from 'src/app/services/moment/moment.service';
 
@@ -20,6 +20,17 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.momentService.getMoments().subscribe((items) => {
       this.moments = items.data;
+    });
+  }
+
+  searchMoment(event: Event): void {
+    const search = event.target as HTMLInputElement;
+
+    console.log(this.moments);
+
+    this.moments = this.moments.filter((moment) => {
+      console.log(moment.title);
+      return moment.title.includes(search.value);
     });
   }
 }

@@ -12,7 +12,7 @@ export class MomentFormComponent implements OnInit {
   @Input() momentData: Moment | null = null;
   @Input() btnText!: string;
 
-  image?: File
+  image?: File;
 
   momentForm!: FormGroup;
 
@@ -20,23 +20,23 @@ export class MomentFormComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.momentData) {
-      console.log(this.momentData)
+      console.log(this.momentData);
       this.momentForm = new FormGroup({
         id: new FormControl(this.momentData.id),
         title: new FormControl(this.momentData.title, [Validators.required]),
-        description: new FormControl(this.momentData.description, [Validators.required]),
-        image: new FormControl(""),
+        description: new FormControl(this.momentData.description, [
+          Validators.required,
+        ]),
+        image: new FormControl(''),
       });
     } else {
       this.momentForm = new FormGroup({
         id: new FormControl(''),
         title: new FormControl('', [Validators.required]),
         description: new FormControl('', [Validators.required]),
-        image: new FormControl(""),
+        image: new FormControl(''),
       });
     }
-
-
   }
 
   get title() {
@@ -58,9 +58,8 @@ export class MomentFormComponent implements OnInit {
       return;
     }
 
-    console.log(this.momentForm.value)
+    console.log(this.momentForm.value);
 
     this.onSubmit.emit(this.momentForm.value);
-    
   }
 }

@@ -15,12 +15,6 @@ import { Moment } from 'src/app/Moment';
 })
 export class NewMomentComponent implements OnInit {
   btnText: string = 'Compartilhar!';
-
-  moment = {
-    title: '',
-    description: '',
-  };
-
   image?: File;
 
   constructor(
@@ -29,9 +23,7 @@ export class NewMomentComponent implements OnInit {
     private messagesService: MessagesService
   ) {}
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
 
   onFileSelected(event: any) {
     const file: File = event.target.files[0];

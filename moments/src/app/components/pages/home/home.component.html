@@ -1,5 +1,12 @@
 <div class="home-container">
   <h1>Veja o que estão compartilhando:</h1>
+  <form>
+    <input
+      type="text"
+      placeholder="Busque por um momento..."
+      (input)="searchMoment($event)"
+    />
+  </form>
   <div *ngIf="moments.length > 0; else noMoments">
     <div class="moments-container">
       <div class="moment" *ngFor="let moment of moments">

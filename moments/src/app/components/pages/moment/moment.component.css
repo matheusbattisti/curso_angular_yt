@@ -28,12 +28,41 @@ img {
 }
 
 .comments {
-  margin-bottom: 3em;
-  padding: 1.5em;
+  margin-bottom: 1em;
+  padding: 1.5em 0;
 }
 
 .about-moment h3,
 .actions h3,
 .comments h3 {
   margin-bottom: 1em;
+}
+
+.comment-container {
+  text-align: left;
+  border-bottom: 1px solid #efefef;
+  padding: 1em 0;
+}
+
+.comment {
+  font-size: 0.9em;
+}
+
+.author {
+  font-size: 0.8em;
+}
+
+.comment-form {
+  margin-bottom: 3em;
+}
+
+.comment-form form {
+  margin-top: 1em;
+  text-align: left;
+  max-width: 300px;
+  margin-left: 0;
+}
+
+.author span {
+  font-weight: bold;
 }
