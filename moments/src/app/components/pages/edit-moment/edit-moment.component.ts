@@ -16,10 +16,6 @@ export class EditMomentComponent implements OnInit {
   moment!: Moment;
   btnText: string = 'Editar';
 
-  image?: File;
-
-  momentForm!: FormGroup;
-
   constructor(
     private momentService: MomentService,
     private route: ActivatedRoute,
@@ -35,34 +31,22 @@ export class EditMomentComponent implements OnInit {
     });
   }
 
-  async editHandler() {
+  async editHandler(momentData: Moment) {
     const id = this.moment.id;
-
-    console.log(id);
-    console.log(this.moment);
-
-    if (this.momentForm.invalid) {
-      return;
-    }
 
     const formData = new FormData();
 
-    formData.append('title', this.moment.title);
-    formData.append('description', this.moment.description);
+    formData.append('title',momentData.title);
+    formData.append('description',momentData.description);
 
-    if (this.image) {
-      formData.append('image', this.image);
+    if (momentData.image) {
+      formData.append('image', momentData.image);
     }
 
-    console.log(typeof id);
-    console.log(id);
-    console.log(formData);
-    console.log(this.moment);
+    await this.momentService.updateMoment(id!, formData).subscribe();
 
-    //await this.momentService.updateMoment(this.moment.id, formData).subscribe();
+    this.messagesService.add(`Momento ${id} atualizado com sucesso!`);
 
-    // this.messagesService.add(`Momento ${id} atualizado com sucesso!`);
-
-    // this.router.navigate(['/']);
+    this.router.navigate(['/']);
   }
 }

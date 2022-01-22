@@ -23,8 +23,6 @@ export class NewMomentComponent implements OnInit {
 
   image?: File;
 
-  momentForm!: FormGroup;
-
   constructor(
     private momentService: MomentService,
     private router: Router,
@@ -32,20 +30,7 @@ export class NewMomentComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.momentForm = new FormGroup({
-      title: new FormControl(this.moment.title, [Validators.required]),
-      description: new FormControl(this.moment.description, [
-        Validators.required,
-      ]),
-    });
-  }
 
-  get title() {
-    return this.momentForm.get('title')!;
-  }
-
-  get description() {
-    return this.momentForm.get('description')!;
   }
 
   onFileSelected(event: any) {
@@ -57,16 +42,12 @@ export class NewMomentComponent implements OnInit {
   buildForm() {}
 
   async createHandler(moment: Moment) {
-    console.log('Oi');
-
-    console.log(moment);
-
     const formData = new FormData();
 
     formData.append('title', moment.title);
     formData.append('description', moment.description);
 
-    if (this.image) {
+    if (moment.image) {
       formData.append('image', moment.image);
     }
 

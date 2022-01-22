@@ -12,12 +12,7 @@ export class MomentFormComponent implements OnInit {
   @Input() momentData: Moment | null = null;
   @Input() btnText!: string;
 
-  moment: Moment = {
-    id: 0,
-    title: '',
-    description: '',
-    image: '',
-  };
+  image?: File
 
   momentForm!: FormGroup;
 
@@ -25,17 +20,23 @@ export class MomentFormComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.momentData) {
-      this.moment.id = this.momentData.id;
-      this.moment.title = this.momentData.title;
-      this.moment.description = this.momentData.description;
+      console.log(this.momentData)
+      this.momentForm = new FormGroup({
+        id: new FormControl(this.momentData.id),
+        title: new FormControl(this.momentData.title, [Validators.required]),
+        description: new FormControl(this.momentData.description, [Validators.required]),
+        image: new FormControl(""),
+      });
+    } else {
+      this.momentForm = new FormGroup({
+        id: new FormControl(''),
+        title: new FormControl('', [Validators.required]),
+        description: new FormControl('', [Validators.required]),
+        image: new FormControl(""),
+      });
     }
 
-    this.momentForm = new FormGroup({
-      id: new FormControl(''),
-      title: new FormControl('', [Validators.required]),
-      description: new FormControl('', [Validators.required]),
-      image: new FormControl(''),
-    });
+
   }
 
   get title() {
@@ -49,9 +50,7 @@ export class MomentFormComponent implements OnInit {
   onFileSelected(event: any) {
     const file: File = event.target.files[0];
 
-    this.momentForm.patchValue({
-      image: file,
-    });
+    this.momentForm.patchValue({ image: event.target.files[0] });
   }
 
   submit() {
@@ -59,6 +58,9 @@ export class MomentFormComponent implements OnInit {
       return;
     }
 
+    console.log(this.momentForm.value)
+
     this.onSubmit.emit(this.momentForm.value);
+    
   }
 }
