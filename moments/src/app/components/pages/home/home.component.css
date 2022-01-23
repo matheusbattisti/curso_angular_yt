@@ -6,7 +6,7 @@
 }
 
 .home-container h1 {
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
 }
 
 .moments-container {
@@ -33,6 +33,11 @@
   margin-bottom: 1em;
 }
 
+.moment .date {
+  font-size: 0.7em;
+  font-style: italic;
+}
+
 a {
   color: #dec129;
   padding: 0.3em 0.6em;
@@ -40,4 +45,27 @@ a {
 
 a:hover {
   background-color: #efefef;
+}
+
+.search-container {
+  margin-bottom: 2em;
+  width: 100%;
+}
+
+.search-container form {
+  width: 30%;
+  position: relative;
+}
+
+.search-container fa-icon {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+}
+
+.search-container input {
+  padding: 0.5em;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
 }

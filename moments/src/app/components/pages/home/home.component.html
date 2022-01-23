@@ -1,12 +1,15 @@
 <div class="home-container">
   <h1>Veja o que estão compartilhando:</h1>
-  <form>
-    <input
-      type="text"
-      placeholder="Busque por um momento..."
-      (input)="searchMoment($event)"
-    />
-  </form>
+  <div class="search-container">
+    <form>
+      <fa-icon [icon]="faSearch"></fa-icon>
+      <input
+        type="text"
+        placeholder="Ou busque por um momento..."
+        (input)="search($event)"
+      />
+    </form>
+  </div>
   <div *ngIf="moments.length > 0; else noMoments">
     <div class="moments-container">
       <div class="moment" *ngFor="let moment of moments">
@@ -15,6 +18,7 @@
           alt="{{ moment.title }}"
         />
         <h3>{{ moment.title }}</h3>
+        <p class="date">Em: {{ moment.created_at }}</p>
         <p>Comentários: {{ moment.comments!.length }}</p>
         <p><a routerLink="moments/{{ moment.id }}">Detalhes</a></p>
       </div>
